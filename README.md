@@ -40,6 +40,16 @@ I feel that this data will give me a good insight into how the sport has grown g
 
 
 ## Project Plan
+1. **Gather the snooker data**
+2. **Clean the data**
+3. **Merge data into useful tables**
+
+   * **Table 1 (Matches Full)**
+
+     | Match\_id | tournament\_id | date | season | year | tournament\_name | stage (QF, SF, F) | best\_of | player1\_name | player1\_country | player2\_name | player2\_country | score1 | score2 | tournament\_country | tournament\_prize | match\_winner | winner\_country | is\_international\_match | is\_international\_tournament | number\_of\_centures |
+     | --------- | -------------- | ---- | ------ | ---- | ---------------- | ----------------- | -------- | ------------- | ---------------- | ------------- | ---------------- | ------ | ------ | ------------------- | ----------------- | ------------- | --------------- | ------------------------ | ----------------------------- | -------------------- |
+4. **Analyse Data**
+
 * Outline the high-level steps taken for the analysis.
 * How was the data managed throughout the collection, processing, analysis and interpretation steps?
 * Why did you choose the research methodologies you used?
