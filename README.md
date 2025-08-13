@@ -7,10 +7,10 @@ The project aims to analyse historical professional snooker data to understand h
 
 ## Dataset Content
 * My dataset consists of 4 csv files
-    * matches.csv
-    * tournaments.csv
-    * scores.csv
-    * players.csv
+    * matches.csv (193530 rows × 13 columns)
+    * tournaments.csv (2720 rows × 11 columns)
+    * scores.csv (934716 rows × 5 columns)
+    * players.csv (13640 rows × 6 columns)
 
 * These tables are all related to eachother through the use of primary and foreign keys.
 
