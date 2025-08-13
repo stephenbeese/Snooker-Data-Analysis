@@ -1,12 +1,24 @@
-# Project XYZ
+# How has the professional snooker tour grown internationally since its height of popularity during the 1980s?
 
-**Project XYZ** is a comprehensive data analysis tool designed to streamline data exploration, analysis, and visualisation. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
+**This project** is a comprehensive data analysis tool designed to streamline data exploration, analysis and visualisation for snooker match results between 1982 and 2020. The tool supports multiple data formats and provides an intuitive interface for both novice and expert data scientists.
 
-# ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+The project aims to analyse historical professional snooker data to understand how the sport has evolved internationally since its peak in the 1980s. I will be focusing on player demographics, tournament distribution and prize money trends.
 
 
 ## Dataset Content
-* Describe your dataset. Choose a dataset of reasonable size to avoid exceeding the repository's maximum size of 100Gb.
+* My dataset consists of 4 csv files
+    * matches.csv
+    * tournaments.csv
+    * scores.csv
+    * players.csv
+
+* These tables are all related to eachother through the use of primary and foreign keys.
+
+* These tables are big and contain a lot of rows.
+
+* I plan to merge these tables into one master table, this will make it easier to analyse and gain insights.
+
+* You can find the Kaggle link to this dataset <a href="https://www.kaggle.com/datasets/rusiano/snooker-data-19822020" target="_blank" rel="noopener">here</a>
 
 
 ## Business Requirements
@@ -14,7 +26,18 @@
 
 
 ## Hypothesis and how to validate?
-* List here your project hypothesis(es) and how you envision validating it (them) 
+* My hypothesis is that the sport has grown globaly, due to the rise international players which has helped produce more tournaments outside of the UK making the sport more accessible for everyone around the world.
+
+* To attempt to validate my hypothesis, I will look at the data trends over the 38 year period I have data for.
+
+* I will look at:
+    * The number of players internationally per season
+    * The number of international tournaments per season
+    * How the average prize money per tournament has been affected by this
+    * The number of players reaching the latter stages of tournaments(Quarter-Final, Semi-Final and Final) and whether that has a knock on effect of more popularity in other parts of the world.
+
+I feel that this data will give me a good insight into how the sport has grown globaly. 
+
 
 ## Project Plan
 * Outline the high-level steps taken for the analysis.
@@ -62,7 +85,6 @@
 
 - The photos used on the home and sign-up page are from This Open-Source site
 - The images used for the gallery page were taken from this other open-source site
-
 
 
 ## Acknowledgements (optional)
