@@ -22,7 +22,12 @@ The project aims to analyse historical professional snooker data to understand h
 
 
 ## Business Requirements
-* Describe your business requirements
+The main business requirement is to evaluate how professional snooker has evolved internationally since its peak popularity in the 1980s. This includes:
+
+* Measuring the growth in tournaments held outside the UK.
+* Tracking the participation and success of international players.
+* Analysing whether this global expansion has impacted prize money and competitiveness.
+* Providing clear, interactive visualisations to help stakeholders quickly understand trends.
 
 
 ## Hypothesis and how to validate?
@@ -49,53 +54,69 @@ I feel that this data will give me a good insight into how the sport has grown g
      | Match\_id | tournament\_id | date | season | year | tournament\_name | stage (QF, SF, F) | best\_of | player1\_name | player1\_country | player2\_name | player2\_country | score1 | score2 | tournament\_country | tournament\_prize | match\_winner | winner\_country | is\_international\_match | is\_international\_tournament | number\_of\_centures |
      | --------- | -------------- | ---- | ------ | ---- | ---------------- | ----------------- | -------- | ------------- | ---------------- | ------------- | ---------------- | ------ | ------ | ------------------- | ----------------- | ------------- | --------------- | ------------------------ | ----------------------------- | -------------------- |
 4. **Analyse Data**
-
-* Outline the high-level steps taken for the analysis.
-* How was the data managed throughout the collection, processing, analysis and interpretation steps?
-* Why did you choose the research methodologies you used?
+* **Data Management:** Data was ingested from multiple CSV files and merged into a master table via primary/foreign keys (tournament\_id, player\_id, match\_id).
+* **Processing:** Used Pandas for cleaning, type conversion, and feature engineering (e.g., `is_international_match` flag, match stage classification).
+* **Analysis:** Grouped data by season, region, and match stage to identify trends.
+* **Interpretation:** Created interactive Plotly visualisations to reveal patterns in UK vs international growth, match stages, and player wins.
+* **Methodology:** Chose exploratory data analysis (EDA) to uncover hidden relationships in historical data before applying structured visual comparisons.
 
 ## The rationale to map the business requirements to the Data Visualisations
-* List your business requirements and a rationale to map them to the Data Visualisations
+* **Requirement:** Understand global growth → **Visualisation:** Line charts comparing UK vs International matches over time.
+* **Requirement:** Track international player success → **Visualisation:** Stacked bar charts showing UK vs International final winners per season.
+* **Requirement:** Assess latter-stage competitiveness → **Visualisation:** Multi-line charts showing Quarter-final, Semi-final, and Final appearances for UK vs International players.
+* **Requirement:** Historical tournament distribution → **Visualisation:** Grouped bar charts showing tournament counts by region per season.
 
 ## Analysis techniques used
-* List the data analysis methods used and explain limitations or alternative approaches.
-* How did you structure the data analysis techniques. Justify your response.
-* Did the data limit you, and did you use an alternative approach to meet these challenges?
-* How did you use generative AI tools to help with ideation, design thinking and code optimisation?
+* **Grouping & Aggregation:** Pandas `groupby` for summarising trends by season, stage, and country.
+* **Feature Engineering:** Created binary flags for UK vs International matches, mapped Boolean values to readable labels.
+* **Visual Analysis:** Used Plotly for interactive exploration and enabling filtering.
+* **Limitations:** Data covers only 1982–2020, so post-2020 developments aren’t reflected. Some missing player country data could slightly skew results.
+* **Alternatives:** Could have used statistical modelling to predict future international growth, but focus remained on historical trends.
+* **Generative AI Use:** Used AI to refine analysis questions, improve plotting code efficiency, and structure the README narrative.
 
 ## Ethical considerations
-* Were there any data privacy, bias or fairness issues with the data?
-* How did you overcome any legal or societal issues?
+* **Bias:** Dataset is historical and may reflect earlier UK bias in tournament hosting and participation. Addressed by explicitly showing UK vs International comparisons.
+* **Privacy:** Data is public and non-sensitive, containing no personal identifiers beyond professional player names.
+* **Fairness:** All analysis treats UK and international players equally, without weighting one group over the other.
 
-## Unfixed Bugs
-* Please mention unfixed bugs and why they were not fixed. This section should include shortcomings of the frameworks or technologies used. Although time can be a significant variable to consider, paucity of time and difficulty understanding implementation are not valid reasons to leave bugs unfixed.
-* Did you recognise gaps in your knowledge, and how did you address them?
-* If applicable, include evidence of feedback received (from peers or instructors) and how it improved your approach or understanding.
+## Key Findings
+* **UK dominance** in the early decades – From the early 1980s through the mid-1990s, UK-based matches vastly outnumbered international ones.
+
+* **Steady international growth** – Since the early 2000s, international matches and player participation have risen steadily.
+
+* **Narrowing performance gap** – International players now reach later stages (QF/SF/F) more frequently, especially post-2010.
+
+* **Occasional international surges** – Some seasons saw international tournament counts match or exceed UK counts.
+
+* **Prize money impact** – The globalisation of snooker correlates with growth in prize funds for both UK and international events.
+
 
 ## Development Roadmap
-* What challenges did you face, and what strategies were used to overcome these challenges?
-* What new skills or tools do you plan to learn next based on your project experience? 
+* **Challenges:**
+  * Merging large datasets while preserving relational integrity.
+  * Dealing with missing or inconsistent country data for players.
+* **Strategies:**
+  * Used incremental merging and checks after each join.
+  * Filled missing countries via cross-referencing other matches.
+* **Next Steps:**
+  * Incorporate post-2020 data for more recent trends.
+  * Extend analysis to prize money inflation-adjusted comparisons.
+  * Explore machine learning models to forecast future international growth. 
 
 ## Main Data Analysis Libraries
-* Here you should list the libraries you used in the project and provide an example(s) of how you used these libraries.
+* **Pandas** – Data cleaning, aggregation, feature creation.
+* **NumPy** – Efficient numeric operations.
+* **Plotly Express** – Interactive line charts, bar charts, filtering controls. Example: multi-line chart for QF/SF/F matches by region.
+* **Seaborn** – Static grouped bar charts for comparison snapshots.
+* **Matplotlib** – Fine-tuning plots and labels when needed and static plots.
 
+## Unfixed Bugs
+* No Known Bugs
 
 ## Credits 
 
-* In this section, you need to reference where you got your content, media and extra help from. It is common practice to use code from other repositories and tutorials, however, it is important to be very specific about these sources to avoid plagiarism. 
-* You can break the credits section up into Content and Media, depending on what you have included in your project. 
-
 ### Content 
 
-- The text for the Home page was taken from Wikipedia Article A
-- Instructions on how to implement form validation on the Sign-Up page was taken from [Specific YouTube Tutorial](https://www.youtube.com/)
-- The icons in the footer were taken from [Font Awesome](https://fontawesome.com/)
+* **Dataset Source**: [Snooker Data 1982-2020](https://www.kaggle.com/datasets/rusiano/snooker-data-19822020) (Kaggle)
 
-### Media
-
-- The photos used on the home and sign-up page are from This Open-Source site
-- The images used for the gallery page were taken from this other open-source site
-
-
-## Acknowledgements (optional)
-* Thank the people who provided support through this project.
+* **Assistance**: ChatGPT, GitHub Copilot (code structuring & README drafting)
